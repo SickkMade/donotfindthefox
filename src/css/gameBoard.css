@@ -37,6 +37,19 @@
     position:relative;
     width:100%;
     aspect-ratio: 1;
+
+    transition: background-color .5s ease;
+}
+.gameboard__game-over{
+    filter: brightness(90%);
+    opacity: 50%;
+    background-color: lightgray;
+    pointer-events: none;
+}
+.gameboard__game-win{
+    filter: brightness(110%);
+    background-color: goldenrod;
+    pointer-events: none;
 }
 
 .gameboard--tile__found{

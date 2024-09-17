@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import '../css/gameBoard.css'
 
-function GameBoard({ tileList, setTileList }) {
+function GameBoard({ tileList, setTileList, isGameOver, setIsGameOver, setIsGameWin, isGameWin }) {
     //new arr filled with -1
     const [gameBoard, setGameBoard] = useState(Array.from(Array(4), () => new Array(4).fill(-1)))
     const [matchesBoard, setMatchesBoard] = useState(Array.from(Array(4), () => new Array(4).fill(0)))
@@ -25,10 +25,17 @@ function GameBoard({ tileList, setTileList }) {
         newBoard[i] = [...gameBoard[i]]
         newBoard[i][j] = tileList[0]
 
+        checkForWin(tileList.length-1)
         setTileList(tileList.slice(1))
 
         setGameBoard(newBoard)
         checkForFox(newBoard, i, j)
+    }
+
+    const checkForWin = (length) => {
+        if(length === 0){
+            setIsGameWin(true)
+        }
     }
 
     const endGame = (dir, row, col) => {
@@ -39,6 +46,7 @@ function GameBoard({ tileList, setTileList }) {
         newMatchesBoard[row][col] = 1
 
         setMatchesBoard(newMatchesBoard)
+        setIsGameOver(true)
     }
 
     const checkForFox = (gameBoard, row, col) => {
@@ -72,7 +80,7 @@ function GameBoard({ tileList, setTileList }) {
     }
 
   return (
-    <div className="gameboard">
+    <div className={`gameboard ${isGameOver && 'gameboard__game-over'} ${isGameWin && 'gameboard__game-win'}`}>
     {gameBoard.map((innerArr, i) => (
         <div className="gameboard--tile--row" key={`row ${i}`}>
         {innerArr.map((tile,j) => (
@@ -89,6 +97,10 @@ function GameBoard({ tileList, setTileList }) {
 GameBoard.propTypes = {
     tileList: PropTypes.array,
     setTileList: PropTypes.func,
+    isGameOver: PropTypes.bool,
+    setIsGameOver: PropTypes.func,
+    setIsGameWin: PropTypes.func,
+    isGameWin: PropTypes.bool,
 }
 
 export default GameBoard
