@@ -38,7 +38,7 @@
     width:100%;
     aspect-ratio: 1;
 
-    transition: background-color .5s ease;
+    transition: all 1.5s ease;
 }
 .gameboard__game-over{
     filter: brightness(90%);
