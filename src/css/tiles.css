@@ -1,0 +1,39 @@
+.tiles--tile{
+    width:7.5%;
+    height:50px;
+    background-color:bisque;
+    border: 2px black solid;
+    border-radius:10%;
+
+}
+
+.tiles > div+div{
+    margin-left:-3%;
+}
+
+.tiles{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:5%;
+    margin-top:5%;
+}
+
+
+/* @media (max-width: 2500px){
+    .tiles{
+        width:calc(400px + 20vw);
+    }
+}
+@media (max-width: 900px){
+    .tiles{
+        width:500px;
+        margin-top:10%;
+    }
+}
+@media (max-width: 500px){
+    .tiles{
+        width:400px;
+        margin-top:10%;
+    }
+} */

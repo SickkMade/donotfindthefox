@@ -1,0 +1,12 @@
+.foxgame--title-div{
+    display:flex;
+    width:fit-content;
+    margin:auto;
+}
+.foxgame--title-div > h1 + h1{
+    margin-left:.75rem;
+}
+
+.foxgame--title__underline{
+    text-decoration: underline;
+}

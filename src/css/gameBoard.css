@@ -1,0 +1,63 @@
+.gameboard--tile--row{
+    display:flex;
+    height:25%;
+}
+
+.gameboard--tile{
+    width:75%;
+    height:75%;
+    background-color: bisque;
+    font-size:5rem;
+    border-radius: 10%;
+    border:1px solid black;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameboard--backing-tile{
+    width:25%;
+    height:100%;
+    font-size:2rem;
+    line-height:100%;
+    border:2px black solid;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameboard--backing-tile:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+.gameboard{
+    position:relative;
+    width:100%;
+    aspect-ratio: 1;
+}
+
+.gameboard--tile__found{
+    background-color: beige;
+}
+
+/* @media (max-width: 2500px){
+    .gameboard--backing-tile{
+        font-size:2rem;
+    }
+}
+@media (max-width: 900px){
+    .gameboard--backing-tile{
+        font-size:1.5rem;
+    }
+}
+@media (max-width: 500px){
+    .gameboard--backing-tile{
+        font-size:1.25rem;
+    }
+    .gameboard--tile{
+        font-size:3rem;
+    }
+} */
